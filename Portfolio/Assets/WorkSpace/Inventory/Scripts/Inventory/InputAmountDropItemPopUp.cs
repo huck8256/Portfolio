@@ -68,7 +68,7 @@ public class InputAmountDropItemPopUp : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
             _oK.onClick.Invoke();
     }
     public void Show(int index)
@@ -81,6 +81,8 @@ public class InputAmountDropItemPopUp : MonoBehaviour
             _maxAmount = countableItem.Amount;
         }
         UIManager.Instance.AddListAndShowPopUp(this.gameObject);
+
+        _inputField.Select();
     }
     public void Hide()
     {

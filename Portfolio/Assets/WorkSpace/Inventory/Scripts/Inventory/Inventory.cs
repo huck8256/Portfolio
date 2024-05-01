@@ -1,3 +1,4 @@
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.Events;
 namespace Cookie.RPG
@@ -116,8 +117,13 @@ namespace Cookie.RPG
                 {
                     if (_items[index] is CountableItem countableItem)
                     {
+                        Debug.Log($"{countableItem.Data.Name} 사용");
+
                         if (countableItem.IsEmpty)
+                        {
                             _items[index] = null;
+                            Debug.Log($"{countableItem.Data.Name}을 모두 사용하였습니다.");
+                        }
                     }
                     _onUpdateItem.Invoke();
                 }
@@ -144,6 +150,7 @@ namespace Cookie.RPG
         }
         public void DropItem(ItemData itemData, int amount = 1)
         {
+            Debug.Log($"{itemData.Name} {amount}개 버림");
             if(itemData.DropItemPrefab != null)
             {
                 GameObject dropItemObj = Instantiate(itemData.DropItemPrefab);
