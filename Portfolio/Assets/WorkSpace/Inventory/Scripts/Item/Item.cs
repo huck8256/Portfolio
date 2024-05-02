@@ -1,5 +1,3 @@
-using System;
-
 namespace Cookie.RPG
 {
     public abstract class Item

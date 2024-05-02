@@ -1,6 +1,6 @@
-using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.Events;
+
 namespace Cookie.RPG
 {
     public class Inventory : MonoBehaviour
