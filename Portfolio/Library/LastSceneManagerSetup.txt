@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/WorkSpace/Player/Player.unity
+- path: Assets/WorkSpace/Equipment/Equipment.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

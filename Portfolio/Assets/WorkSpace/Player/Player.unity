@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 544386724}
   - component: {fileID: 544386723}
   - component: {fileID: 544386722}
+  - component: {fileID: 544386725}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -183,7 +184,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -208,13 +209,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544386721}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &544386725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544386721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85743545d20ffe840854136185697fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 2070943749}
 --- !u!1 &1400070501
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +550,7 @@ GameObject:
   - component: {fileID: 2070943745}
   - component: {fileID: 2070943752}
   - component: {fileID: 2070943750}
+  - component: {fileID: 2070943753}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -584,6 +599,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 76619dc1-1f34-48f3-9436-294d4e9b64a2
     m_ActionName: PlayerActions/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2070943750}
+        m_TargetAssemblyTypeName: Cookie.RPG.PlayerController, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ba00c00-74d1-4376-b4ef-f3ed6de08b3e
+    m_ActionName: PlayerActions/Attack[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: PC
   m_DefaultActionMap: PlayerActions
@@ -688,6 +719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a07664f1a4ef3d40a06ad77fc2f4995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &2070943751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -727,12 +761,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9351bdceebf5442a4bd442b86e441f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  _moveSpeed: 1
+--- !u!114 &2070943753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070943744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b131bb044e2ca4f9a1a96a91d7835b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 8091209309301516776, guid: d60d92ed78fc07545909120c6d3f9df2, type: 3}
+  _maxCount: 20
+  _power: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 544386724}
   - {fileID: 1923787385}
+  - {fileID: 544386724}
   - {fileID: 2070943749}
   - {fileID: 1460661015}
