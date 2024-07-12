@@ -101,8 +101,7 @@ namespace Cookie.RPG
                 {
                     // 아이템 생성
                     _items[index] = itemData.CreateItem();
-
-                    amount--;
+                    Debug.Log($"{itemData.Name} 획득");
                 }
             }
             _onUpdateItem.Invoke();
@@ -124,6 +123,18 @@ namespace Cookie.RPG
                             _items[index] = null;
                             Debug.Log($"{countableItem.Data.Name}을 모두 사용하였습니다.");
                         }
+                    }
+                    _onUpdateItem.Invoke();
+                }
+            }
+            else if (_items[index] is IEquipmentableItem equipmentableItem)
+            {
+                if(equipmentableItem.Equip())
+                {
+                    if (_items[index] is EquipmentItem equipmentItem)
+                    {
+                        Debug.Log($"{equipmentItem.Data.Name} 장착");
+                        // 장착 로직
                     }
                     _onUpdateItem.Invoke();
                 }

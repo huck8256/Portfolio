@@ -4,10 +4,10 @@ namespace Cookie.RPG
 {
     public abstract class EquipmentItem : Item
     {
-        public EquipmentItemData EquipmentItemData { get; private set; }
-        public EquipmentItem(EquipmentItemData data) : base(data)
+        public EquipmentableItemData EquipmentableItemData { get; private set; }
+        public EquipmentItem(EquipmentableItemData data) : base(data)
         {
-            EquipmentItemData = data;
+            EquipmentableItemData = data;
         }
     }
 }

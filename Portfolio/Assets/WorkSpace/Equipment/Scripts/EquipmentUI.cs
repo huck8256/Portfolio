@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Cookie.RPG
 {
@@ -7,20 +8,29 @@ namespace Cookie.RPG
         [SerializeField] Equipment _equipment;
 
         Transform _window;
+        Transform _headerArea;
+        Transform _contentArea;
+
+        Button _closeButton;
 
         void Start()
         {
             Init();
+            AddListener();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
         private void Init()
         {
             _window = transform.GetChild(0);
+            _headerArea = _window.GetChild(0);
+            _contentArea = _window.GetChild(1);
+
+            _closeButton = _headerArea.GetChild(1).GetComponent<Button>();
+        }
+        void AddListener()
+        {
+            // exit 버튼 설정
+            _closeButton.onClick.AddListener(() => UIManager.Instance.RemoveShowingPopUp(_window.gameObject));
         }
         public void Window()
         {

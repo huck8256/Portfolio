@@ -4713,7 +4713,7 @@ MonoBehaviour:
   _itemDatas:
   - {fileID: 11400000, guid: fec76314fca7fcc41aa35fc05d0bcc9d, type: 2}
   - {fileID: 11400000, guid: fec76314fca7fcc41aa35fc05d0bcc9d, type: 2}
-  - {fileID: 11400000, guid: fec76314fca7fcc41aa35fc05d0bcc9d, type: 2}
+  - {fileID: 11400000, guid: a2ffc7d71cf3b4a43a5a0ed639e77ec2, type: 2}
 --- !u!114 &3937423021437444504
 MonoBehaviour:
   m_ObjectHideFlags: 0

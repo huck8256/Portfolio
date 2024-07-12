@@ -2,8 +2,10 @@ using UnityEngine;
 
 namespace Cookie.RPG
 {
-    public abstract class EquipmentItemData : ItemData
+    public abstract class EquipmentableItemData : ItemData
     {
+        // 장착 중인지?
+        public bool IsEquiped => _isEquiped;
         // 체력
         public int Health => _health;
         // 방어력
@@ -15,11 +17,12 @@ namespace Cookie.RPG
         // 이동속도
         public int MoveSpeed => _moveSpeed;
 
+        [SerializeField] private bool _isEquiped;
         [SerializeField] private int _health;
         [SerializeField] private int _defense;
         [SerializeField] private int _magicDamage;
         [SerializeField] private int _physicsDamage;
         [SerializeField] private int _moveSpeed;
-   }
+    }
 }
 

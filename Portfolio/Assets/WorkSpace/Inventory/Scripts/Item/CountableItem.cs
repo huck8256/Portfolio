@@ -4,14 +4,14 @@ namespace Cookie.RPG
 {
     public abstract class CountableItem : Item
     {
-        public CountableItemData CountableData { get; private set; }
+        public CountableItemData CountableItemData { get; private set; }
         public int Amount { get; protected set; }
-        public int MaxAmount => CountableData.MaxAmount;
-        public bool IsMax => Amount >= CountableData.MaxAmount;
+        public int MaxAmount => CountableItemData.MaxAmount;
+        public bool IsMax => Amount >= CountableItemData.MaxAmount;
         public bool IsEmpty => Amount <= 0;
         public CountableItem(CountableItemData data, int amount = 1) : base(data)
         {
-            CountableData = data;
+            CountableItemData = data;
             SetAmount(amount);
         }
         public void SetAmount(int amount)
